@@ -130,7 +130,7 @@ export default {
     fetcher: async function(name, point, max, fuzzy) {
       try {
         name = name.replace(/\s/g,'');
-        const url = `http://${location.hostname}:8080/suggestions?locationName=${name}&startPoint=${point}&limit=${max}&fuzzy=${fuzzy}`;
+        const url = `http://${location.hostname}/suggestions?locationName=${name}&startPoint=${point}&limit=${max}&fuzzy=${fuzzy}`;
         const response = await axios.get(url);
         this.places = response.data;
       } catch (e) {
